@@ -1,9 +1,7 @@
-import Char.newfunctions
+import CharStringExtension.Data.Char.newfunctions
 
-def String.boldify: String -> String :=
-  | ⟨[]⟩ => ""
-  | ⟨x::xs⟩ => ⟨x.boldify⟩++⟨xs⟩.boldify
+def String.boldify: String → String
+  | ⟨s⟩ => ⟨s.map (fun x => x.boldify)⟩
 
-def String.italicize: String -> String :=
-  | ⟨[]⟩ => ""
-  | ⟨x::xs⟩ => ⟨x.italicize⟩++⟨xs⟩.italicize
+def String.italicize: String → String
+  | ⟨s⟩ => ⟨s.map (fun x => x.italicize)⟩
