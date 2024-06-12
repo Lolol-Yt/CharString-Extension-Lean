@@ -10,4 +10,4 @@ def String.repeat (str: String): Nat → String
   | 0 => ""
   | .succ n => str ++ String.repeat str n
 
-instance HMulStringNat : HMul String Nat := ⟨String.repeat⟩
+instance HMulStringNat : HMul String Nat String := ⟨String.repeat⟩
