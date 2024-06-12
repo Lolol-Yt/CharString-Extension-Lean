@@ -8,4 +8,6 @@ def String.italicize: String → String
 
 def String.repeat (str: String): Nat → String
   | 0 => ""
-  | .succ n => str ++ String.repeat n
+  | .succ n => str ++ String.repeat str n
+
+instance HMulStringNat : HMul String Nat := ⟨String.repeat⟩
